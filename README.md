@@ -1,3 +1,95 @@
-This study examines credit default prediction by comparing three techniques, namely SMOTE, SMOTE-Tomek, and ADASYN, that are commonly used to address the class imbalance problem in credit default situations. Recognizing that credit default datasets are typically skewed, with defaulters comprising a much smaller proportion than non-defaulters, we began our analysis by evaluating machine learning (ML) models on the imbalanced data without any resampling to establish baseline performance. These baseline results provide a reference point for understanding the impact of subsequent balancing methods. In addition to traditional classifiers such as Naive Bayes and K-Nearest Neighbors (KNN), our study also explores the suitability of advanced ensemble boosting algorithms, including Extreme Gradient Boosting (XGBoost), AdaBoost, Gradient Boosting Machines (GBM), and Light GBM for credit default prediction using Boruta feature selection and DBSCAN-based outlier detection, both before and after resampling. A real-world credit default data set sourced from the University of Cleveland ML Repository was used to build ML classifiers, and their performances were tested. The criteria chosen to measure model performance are the area under the receiver operating characteristic curve (ROC-AUC), area under the precision-recall curve (PR-AUC), G-mean, and F1-scores. The results from this empirical study indicate that the Boruta+DBSCAN+SMOTE-Tomek+GBM classifier outperformed the other ML models (F1-score: 82.56%, G-mean: 82.98%, ROC-AUC: 90.90%, PR-AUC: 91.85%) in a credit default context following an initial training using the 5-fold cross-validation with F1-score as a scoring criterion coupled with extensive hyperparameter tuning. The efficiency of ensemble boosting techniques as a useful weapon in the fight against credit default has been highlighted in this study. The findings establish a foundation for future progress in creating more resilient and adaptive credit default systems, which will be essential as credit-based transactions continue to rise worldwide.
+# Enhancing Credit Default Prediction Using Boruta Feature Selection, DBSCAN, and Resampling Techniques
 
-Keywords: Credit Default, Boruta, DBSCAN, Class Imbalance, Gradient Boosting Machines
+## Overview
+
+This repository provides reproducible code and data for a credit default prediction study. The analysis focuses on class imbalance, feature selection, outlier detection, and ensemble learning for improved identification of default risk.
+
+## Repository
+
+- **Repository name:** `Credit-Default-Manuscript`
+- **Repository type:** Jupyter Notebook research repository
+- **Repository link:** https://github.com/Agyemang1z/Credit-Default-Manuscript
+- **Primary author:** Edmund Fosu Agyemang
+- **Academic identifier:** ORCID: https://orcid.org/0000-0001-8124-4493
+
+## Repository Contents
+
+The public repository listing identifies the following files:
+
+- `Boruta.csv`
+- `Borutta_DBSCAN.csv`
+- `Credit_Default_Manuscript.ipynb`
+- `README.md`
+- `default of credit card clients.csv`
+
+## Research Objectives
+
+- Establish baseline model performance using the imbalanced credit default dataset.
+- Apply Boruta feature selection to identify informative predictors.
+- Use DBSCAN-based outlier detection to improve data quality.
+- Compare class imbalance remedies including SMOTE, SMOTE-Tomek, and ADASYN.
+- Evaluate traditional classifiers and advanced boosting algorithms for credit default prediction.
+
+## Analytical Workflow
+
+1. Load the credit default dataset and feature selection outputs.
+2. Conduct preprocessing and define the binary default outcome.
+3. Apply Boruta feature selection and DBSCAN-based outlier handling.
+4. Train baseline models without resampling.
+5. Apply class balancing methods and retrain models.
+6. Compare models using F1 score, G-mean, ROC-AUC, and PR-AUC.
+
+## Software Requirements
+
+Recommended software and packages include:
+
+- Python 3.10 or later
+- Jupyter Notebook or JupyterLab
+- pandas
+- numpy
+- scikit-learn
+- imbalanced-learn
+- matplotlib
+- xgboost
+- lightgbm
+
+## Reproducibility Guide
+
+Run the project from a clean working directory. The following commands provide a suggested starting point:
+
+```bash
+git clone https://github.com/Agyemang1z/Credit-Default-Manuscript.git
+cd Credit-Default-Manuscript
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install pandas numpy scikit-learn imbalanced-learn matplotlib xgboost lightgbm jupyter
+jupyter notebook "Credit_Default_Manuscript.ipynb"
+```
+
+If file names include spaces, keep quotation marks around the file name when launching notebooks or scripts from the terminal.
+
+## Expected Outputs
+
+- Balanced and imbalance-aware model performance tables
+- Feature selection outputs
+- Outlier detection outputs
+- Comparative classification metrics
+
+## Data Availability and Responsible Use
+
+The data and code are provided for scholarly, educational, and reproducibility purposes. Users should verify the original data source, data license, and any use restrictions before redistribution or secondary analysis. When the dataset contains human, health, financial, or election-related information, results should be interpreted responsibly and reported with appropriate methodological caution.
+
+## Suggested Citation
+
+Agyemang, E. F. (n.d.). *Enhancing Credit Default Prediction Using Boruta Feature Selection, DBSCAN, and Resampling Techniques* [Source code and data]. GitHub. https://github.com/Agyemang1z/Credit-Default-Manuscript
+
+If this repository supports a manuscript, replace the citation above with the final article citation after publication. For stronger academic referencing, consider creating a GitHub release and archiving the release on Zenodo to obtain a DOI.
+
+
+## Keywords
+
+Credit default, Class imbalance, Boruta, DBSCAN, SMOTE, ADASYN, Gradient boosting
+
+## Disclaimer
+
+This repository is intended to support reproducible research. The code and outputs should not be used as a substitute for professional clinical, financial, legal, electoral, or policy judgment.
